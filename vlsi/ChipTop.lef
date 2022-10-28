@@ -1,0 +1,140 @@
+##
+## LEF for ChipTop ;
+##
+
+VERSION 5.8 ;
+
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+MACRO ChipTop
+    CLASS BLOCK ;
+    SIZE 2400.0 BY 2000.0 ;
+    FOREIGN Digital 0.000000 0.000000 ;
+    ORIGIN 0 0 ;
+    SYMMETRY X Y R90 ;
+    PIN serial_tl_bits_out_ready
+        DIRECTION INPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met3 ;
+            RECT 0.0 1353.0 0.5 1353.5 ;
+        END
+    END serial_tl_bits_out_ready
+    PIN serial_tl_bits_out_valid
+        DIRECTION OUTPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met3 ;
+            RECT 0.0 1127.0 0.5 1127.5 ;
+        END
+    END serial_tl_bits_out_valid
+    PIN serial_tl_bits_in_ready
+        DIRECTION OUTPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met3 ;
+            RECT 0.0 902.0 0.5 902.5 ;
+        END
+    END serial_tl_bits_in_ready
+    PIN serial_tl_bits_in_bits
+        DIRECTION INPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met3 ;
+            RECT 0.0 667.0 0.5 667.5 ;
+        END
+    END serial_tl_bits_in_bits
+    PIN serial_tl_bits_out_bits
+        DIRECTION OUTPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met3 ;
+            RECT 0.0 451.0 0.5 451.5 ;
+        END
+    END serial_tl_bits_out_bits
+    PIN serial_tl_bits_in_valid
+        DIRECTION INPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met3 ;
+            RECT 0.0 226.0 0.5 226.5 ;
+        END
+    END serial_tl_bits_in_valid
+    PIN reset
+        DIRECTION INPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met4 ;
+            RECT 0.0 0.0 0.5 0.5 ;
+        END
+    END reset
+    PIN clock_clock
+        DIRECTION INPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met4 ;
+            RECT 0.0 20.0 0.5 20.5 ;
+        END
+    END clock_clock
+    PIN jtag_TCK
+        DIRECTION INPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met4 ;
+            RECT 543.0 0.0 543.5 0.5 ;
+        END
+    END jtag_TCK
+    PIN jtag_TMS
+        DIRECTION INPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met4 ;
+            RECT 817.0 0.0 817.5 0.5 ;
+        END
+    END jtag_TMS
+    PIN jtag_TDI
+        DIRECTION INPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met4 ;
+            RECT 1091.0 0.0 1091.5 0.5 ;
+        END
+    END jtag_TDI
+    PIN jtag_TDO
+        DIRECTION OUTPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met4 ;
+            RECT 1365.0 0.0 1365.5 0.5 ;
+        END
+    END jtag_TDO
+    PIN serial_tl_clock
+        DIRECTION OUTPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met3 ;
+            RECT 2398.0 10.0 2398.5 10.5 ;
+        END
+    END serial_tl_clock
+    PIN uart_0_rxd
+        DIRECTION INPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met3 ;
+            RECT 2398.0 1127.0 2398.5 1127.5 ;
+        END
+    END uart_0_rxd
+    PIN uart_0_txd
+        DIRECTION OUTPUT ;
+        USE SIGNAL ;
+        PORT
+        LAYER met3 ;
+            RECT 2398.0 1353.0 2398.5 1353.5 ;
+        END
+    END uart_0_txd
+    OBS
+    END
+END ChipTop
+
+END LIBRARY

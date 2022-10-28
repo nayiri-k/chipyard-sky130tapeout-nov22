@@ -1,0 +1,79 @@
+# Technology Setup
+# Technology used is Sky130
+vlsi.core.technology: sky130
+
+# Technology paths
+technology.sky130:
+  sky130A: "/tools/C/nayiri/sky130/sky130A"
+  sky130B: "/tools/C/nayiri/sky130/sky130B"
+  openram_lib: "/tools/C/nayiri/sky130/sky130_sram_macros" 
+
+  # this key is OPTIONAL, no NDA files will be used if it does not point to a valid path
+  sky130_nda: "/tools/commercial/skywater/swtech130/skywater-src-nda"
+
+vlsi.core.max_threads: 12
+
+# Specify pin locations
+vlsi.inputs.pin_mode: none
+vlsi.technology.extra_libraries_meta: ["append", "deepsubst"]
+vlsi.technology.extra_libraries:
+  - library:
+      lef file_deepsubst_meta: "local"
+      lef file: ChipTop.lef
+
+sim.inputs.options:
+  - "-notice"
+  - "-line"
+  - "+warn=none"
+  - "+lint=none"
+  - "+v2k"
+  - "-debug"
+  - "-sverilog"
+
+
+# General Hammer Inputs
+
+# Specify clock signals
+vlsi.inputs.clocks: [
+  {name: "clock_clock", period: "50ns", uncertainty: "1ns"}
+]
+
+# Hammer will auto-generate a CPF for simple power designs; see hammer/src/hammer-vlsi/defaults.yml for more info
+vlsi.inputs.power_spec_mode: "auto"
+vlsi.inputs.power_spec_type: "cpf"
+
+
+# Generate Make include to aid in flow 
+vlsi.core.build_system: make
+
+
+# Power Straps
+par.power_straps_mode: generate
+par.generate_power_straps_method: by_tracks
+par.blockage_spacing: 2.0
+par.blockage_spacing_top_layer: met4
+par.generate_power_straps_options:
+  by_tracks:
+    strap_layers:
+      - met4
+      - met5
+    pin_layers:
+      - met5
+    blockage_spacing_met2: 4.0
+    blockage_spacing_met4: 2.0
+    blockage_spacing_met4: 2.0
+    track_width: 3
+    track_width_met5: 1
+    track_spacing: 5
+    track_spacing_met5: 3
+    track_start: 10
+    track_start_met5: 1
+    power_utilization: 0.1
+    # power_utilization_met4: 0.2
+    power_utilization_met5: 0.2
+
+# SRAM Compiler compiler options
+vlsi.core.sram_generator_tool: "sram_compiler"
+# You should specify a location for the SRAM generator in the tech plugin
+vlsi.core.sram_generator_tool_path: []
+vlsi.core.sram_generator_tool_path_meta: "append"

@@ -12,6 +12,7 @@ sim_dir=$(abspath .)
 #########################################################################################
 # include shared variables
 #########################################################################################
+include $(vlsi_dir)/nov22.mk
 include $(vlsi_dir)/tutorial.mk
 include $(base_dir)/variables.mk
 
