@@ -87,7 +87,7 @@ vlsi.inputs.placement_constraints:
   # Place instruction cache SRAM instances
   - path: "ChipTop/system/tile_prci_domain/tile_reset_domain/tile/frontend/icache/data_arrays_0/data_arrays_0_0_ext/mem_0_0"
     type: hardmacro
-    x: 2520
+    x: 2470
     y: 500
     orientation: r270
     width: 683.1
@@ -95,7 +95,7 @@ vlsi.inputs.placement_constraints:
 
   - path: "ChipTop/system/tile_prci_domain/tile_reset_domain/tile/frontend/icache/data_arrays_0/data_arrays_0_0_ext/mem_1_0"
     type: hardmacro
-    x: 2520
+    x: 2470
     y: 1260
     orientation: r270
     width: 683.1
@@ -103,7 +103,7 @@ vlsi.inputs.placement_constraints:
 
   - path: "ChipTop/system/tile_prci_domain/tile_reset_domain/tile/frontend/icache/tag_array/tag_array_ext/mem_0_0"
     type: hardmacro
-    x: 2460
+    x: 2410
     y: 30
     orientation: mx
     width: 479.78

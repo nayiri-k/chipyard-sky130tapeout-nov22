@@ -1,0 +1,6 @@
+build-sky130-commercial
+    OpenRAM srams
+    DRC/LVS clean
+    uses old ChipTop.lef
+    uses old footprint
+build-sky130-sram22
